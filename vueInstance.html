@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Instance</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<!-- Vue Application çalışma alanı  -->
+
+<div id="app">
+    <!-- {{}}: string interpolution -->
+    <h2>{{title}}</h2> 
+    <p>{{text}}</p>
+
+    <!-- Bind: bağlama  -->
+    <!-- html attributeleri vue js üzerinden kontrol etmek için kullanılır  -->
+    <!-- v-bind:href veya :href olarak kullanılır  -->
+    <a  target="_blank" v-bind:href="url">Bizi ziyaret edin!</a> <br>
+    <!-- dışarıdan gelen veriler için aşağıdaki yöntem kullanılır -->
+    <a  :target="lineer.target" :href="lineer.url">{{lineer.title}}</a>
+
+    <br> <br>
+    <!-- Buton Event için: v-on:click veya @click olarak yazılır -->
+    <button v-on:click="changeTitle('H2 Değişti!')"> <span id="butonName" >Buton Adı ve Merhaba Dünya yazısını Değiştir....</span></button>
+    <br> <br>
+    <button @click="changeTitle('1. Değişiklik')"> Title Değiştir! </button> |
+    <button @click="changeTitle('2. Değişiklik')"> Title Değiştir! </button>
+
+    <br> <br> <br>
+
+    <!-- Event  -->
+    <div style="width: 300px; height: 300px; background-color: yellow;" @mousemove="updateCoords($event)">
+
+    </div>
+
+    <h4>Koordinatlar: {{koordinat.x}}, {{koordinat.y}} </h4>
+
+</div>
+    
+<script src="app.js"></script>
+</body>
+</html>
