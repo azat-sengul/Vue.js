@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Vue Page </title>
+    <!-- Step - 1 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<!-- Step - 2 -->
+<div id="app">
+    <h2> Hello {{name}}! </h2>
+</div>
+    
+
+<script>
+    // Step - 3
+    const {createApp} = Vue
+
+    // Step - 4
+    createApp({
+
+        // Step - 5
+        data(){
+            return{
+                name: "Azat",
+            }
+        }
+    }).mount("#app");
+    
+</script>
+</body>
+</html>
