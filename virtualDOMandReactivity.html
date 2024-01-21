@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual DOM and Reactivity</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        // virtual DOM Vue DOM'un bir kopyasıdır
+        // instance tarafında değişikliği sürekli kontrol eder ve değişiklik durumunda template üzerinden bir update işlemi gerçekleştirir. Sonrasında Vue DOM ile kıyaslar
+        // Değişiklik olması durumda Veu DOM değişikliği yansıtır
+        // Virtual DOM değişiklik durumunda bütün sayfayı yeniden render eder. Bu durumda bütün fonksiyonlar yeniden çalışır. Bu durum olumsuz sonuçlar doğurur. 
+        // Reactivity yöntemlerinden olan Computed ile sadece ilgli fonksiyonun çalışması için computed metotları kullanılır. Bu durumsa sayfada sadece ilgili yerler değiştirilip render edilir
+
+        // Örnek 
+        computed: 
+        {
+            Increase(){
+            return this.counter > 5 ? "Büyük" : "Küçük"; //this.counter kısmında değişiklik olursa çalışır. 
+            },
+            Decrease(){
+                return this.counter2 > 5 ? "Büyük" : "Küçük";
+            }     
+        }
+
+        
+
+
+
+        // Vue instance;
+        // title : "Vue.js eğitimi",
+        // description : "0 da ileri seviyeye Vue",
+        // liked : 4500
+
+        // Virtual DOM;
+        // <h1>Vue.js eğitimi</h1>
+        // <p>0 da ileri seviyeye Vue</p>
+        // <button @click="liked++">Beğen</button> = 4500
+
+        // Vue DOM;
+        // <h1>Vue.js eğitimi</h1>
+        // <p>0 da ileri seviyeye Vue</p>
+        // <button @click="liked++">Beğen</button> = 4500
+
+    </script>
+    
+</body>
+</html>
